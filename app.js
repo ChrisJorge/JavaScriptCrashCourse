@@ -72,17 +72,17 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
         this.data1 = data1
         this.name2 = name2
         this.data2 = data2
-        let score1 
-        let score2
+        let score1 = 0
+        let score2 = 0
         for(let i = 0; i < data1.length; i ++)
             {score1 += data1[i]}
 
-        score1 = (score1 / data1.length)
+        score1 = (score1 / data1.length).toFixed(2)
 
         for(let i = 0; i < data2.length; i++)
             {score2 += data2[i]}
 
-        score2 = (score2 / data2.length)
+        score2 = (score2 / data2.length).toFixed(2)
         if (score1 < 100 || score2 < 100)
             {
                 if (score1 < 100 && score2 < 100)
@@ -99,12 +99,14 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
                 }
             }
         else if (score1 > score2)
-            {return (`${name1} score of ${score1} is higher than ${name2} score of ${score2} `)}
+            {return (`${name1} score of ${score1} is higher than ${name2} score of ${score2}, ${name1} wins `)}
         else if(score2 > score1) 
-            {return (`${name2} score of ${score2} is higher than ${name1} score of ${score1}`)}
+            {return (`${name2} score of ${score2} is higher than ${name1} score of ${score1}, ${name2} wins`)}
         else{return (` ${name1} and ${name2} both have a score of ${score1}. It is a tie `)}
     }
 
 console.log(BMI('Mark', 78, 1.69, 'John', 78, 1.95))
 console.log(BMI('Mark', 95, 1.88, 'John', 85, 1.76))
-console.log(gymnastics())
+console.log(gymnastics('Dolphins', [96,108,89], 'Koalas', [88,91,110]))
+console.log(gymnastics('Dolphins', [97,112,101], 'Koalas', [109,95,123]))
+console.log(gymnastics('Dolphins', [97,112,101], 'Koalas', [109,95,106]))
