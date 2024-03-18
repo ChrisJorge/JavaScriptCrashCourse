@@ -54,11 +54,11 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
     let bmi2 = (weight2 / (height2 * height2))
     if (bmi1 > bmi2)
     {
-        return(`${name1}’s  bmi is: ${bmi1.toFixed(2)}, which is higher than ${name2}’s bmi which is: ${bmi2.toFixed(2)} `)
+        return(`${name1}’s bmi is: ${bmi1.toFixed(2)}, which is higher than ${name2}’s bmi which is: ${bmi2.toFixed(2)} `)
     }
     else if(bmi2 > bmi1)
     {
-        return(`${name2}’s  bmi is: ${bmi2.toFixed(2)}, which is higher than ${name1}’s bmi which is: ${bmi1.toFixed(2)} `)
+        return(`${name2}’s bmi is: ${bmi2.toFixed(2)}, which is higher than ${name1}’s bmi which is: ${bmi1.toFixed(2)} `)
     }
     else
     {
@@ -83,9 +83,21 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
             {score2 += data2[i]}
 
         score2 = (score2 / data2.length)
-        if (score1 < 100 && score2 < 100)
-
-            {return(`Both teams scored under 100 no team wins`)}
+        if (score1 < 100 || score2 < 100)
+            {
+                if (score1 < 100 && score2 < 100)
+                {
+                    return(`Both teams scored under 100 no team wins`)
+                }
+                else if (score1 < 100 && score2 > 100)
+                {
+                    return(`${name1} score of ${score1} is less than 100, while ${name2} score of ${score2} is greater than 100, \n ${name2} wins `)
+                }
+                else
+                {
+                    return(`${name2} score of ${score2} is less than 100, while ${name1} score of ${score1} is greater than 100, \n ${name1} wins `)
+                }
+            }
         else if (score1 > score2)
             {return (`${name1} score of ${score1} is higher than ${name2} score of ${score2} `)}
         else if(score2 > score1) 
@@ -95,3 +107,4 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
 
 console.log(BMI('Mark', 78, 1.69, 'John', 78, 1.95))
 console.log(BMI('Mark', 95, 1.88, 'John', 85, 1.76))
+console.log(gymnastics())
