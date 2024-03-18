@@ -36,3 +36,8 @@ const todos = [
 ];
 
 console.log(todos[1].text)
+
+
+for (let todo of todos){
+    console.log(todo)
+}
