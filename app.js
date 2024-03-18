@@ -66,7 +66,7 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
     }
     }
     
-    function gymnastics(name1, data1, name2, data2)
+function gymnastics(name1, data1, name2, data2)
     {
         this.name1 = name1
         this.data1 = data1
@@ -105,8 +105,15 @@ function BMI (name1, weight1, height1, name2, weight2, height2)
         else{return (` ${name1} and ${name2} both have a score of ${score1}. It is a tie `)}
     }
 
+function tipCalculator(bill){
+    this.bill = bill
+    return ( 50<= bill && bill <= 300 ? `The bill was ${bill}, the tip is ${(bill * .15).toFixed(2)}, and the total is now ${(bill + (bill * 0.15)).toFixed(2)}` : `The bill was ${bill}, the tip is ${(bill * .2).toFixed(2)}, and the total is now ${(bill + (bill * 0.20)).toFixed(2)}`)
+}
 console.log(BMI('Mark', 78, 1.69, 'John', 78, 1.95))
 console.log(BMI('Mark', 95, 1.88, 'John', 85, 1.76))
 console.log(gymnastics('Dolphins', [96,108,89], 'Koalas', [88,91,110]))
 console.log(gymnastics('Dolphins', [97,112,101], 'Koalas', [109,95,123]))
 console.log(gymnastics('Dolphins', [97,112,101], 'Koalas', [109,95,106]))
+console.log(tipCalculator(275))
+console.log(tipCalculator(40))
+console.log(tipCalculator(430))
