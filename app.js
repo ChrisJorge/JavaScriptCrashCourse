@@ -107,7 +107,7 @@ function gymnastics(name1, data1, name2, data2)
 
 function tipCalculator(bill){
     this.bill = bill
-    return ( 50<= bill && bill <= 300 ? `The bill was ${bill}, the tip is ${(bill * .15).toFixed(2)}, and the total is now ${(bill + (bill * 0.15)).toFixed(2)}` : `The bill was ${bill}, the tip is ${(bill * .2).toFixed(2)}, and the total is now ${(bill + (bill * 0.20)).toFixed(2)}`)
+    return ( 50<= bill && bill <= 300 ? `The bill was $${bill}, the tip is $${(bill * .15).toFixed(2)}, and the total is now $${(bill + (bill * 0.15)).toFixed(2)}` : `The bill was $${bill}, the tip is $${(bill * .2).toFixed(2)}, and the total is now $${(bill + (bill * 0.20)).toFixed(2)}`)
 }
 console.log(BMI('Mark', 78, 1.69, 'John', 78, 1.95))
 console.log(BMI('Mark', 95, 1.88, 'John', 85, 1.76))
